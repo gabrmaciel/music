@@ -1,0 +1,21 @@
+<div id="Lyrics">
+    <div class="lyrics-close" id="lyrics-close" onclick="App('player')">
+        <div class="lyrics-close-bar-one" id="lyrics-close-bar-one">&nbsp;</div>
+        <div class="lyrics-close-bar-two" id="lyrics-close-bar-two">&nbsp;</div>
+    </div>
+    <div id="lyrics-div">
+        
+    </div>
+    <div class="lyrics-lyrics">
+        <span class="lyrics-lyrics-top" id="lyrics-top">...</span>
+        <span class="lyrics-lyrics-sec" id="lyrics-sec"></span>
+    </div>
+</div>
+<script>
+    $(document).ready(function(){
+        LyricsConstructorImage(trackID);
+        $("#lyrics-album-img").css("background-image", "url(img/"+ cover +")");
+        $("#Lyrics, #lyrics-close-bar-one, #lyrics-close-bar-two").css("background", color);
+        $("#lyrics-sec").html(fisrtLyricTrack);
+    })
+</script>

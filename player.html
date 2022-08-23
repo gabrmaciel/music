@@ -1,0 +1,38 @@
+﻿<div id="Player">
+    <div class="player-voltar">
+        <span class="player-voltar-artist" onclick="App('grid')">TAYLOR SWIFT  |</span>
+        <span class="player-voltar-album" id="player-voltar"></span>
+    </div>
+    <div class="player-album">
+        <img src="" id="album" alt="">
+    </div>
+    <div class="player-title">
+        <span class="player-title-title" id="player-title-title"></span>
+        <span class="player-title-year"id="player-title-year"></span>
+    </div>
+    <div class="player-tracklist">
+        <div class="player-tracklist-table">
+            <div class="player-tracklist-table-line player-tracklist-table-line-top">
+                <span class="player-tracklist-table-number">#</span>
+                <span class="player-tracklist-table-title">&nbsp;</span>
+                <span class="player-tracklist-table-duration">
+                    <img src="img/clock.png" width="16" alt="" srcset="">
+                </span>
+            </div>
+            <div id="player-tracklist">
+
+            </div>
+            <span class="player-tracklist-record" id="record"></span>
+        </div>
+    </div>
+    
+</div>
+<script>
+    $(document).ready(function(){
+        CheckAlbum(albumID);
+
+        $("#audio").bind("ended", function() {
+           var audio = NextMusic($("#audio")[0].src);
+        });
+    })
+</script>

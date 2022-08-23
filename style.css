@@ -1,0 +1,1111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Signika, Arial;
+    font-size: 1vw;
+}
+
+::-webkit-scrollbar{
+    width: 8px;
+}
+
+::-webkit-scrollbar-track{
+    background: rgba(0,0,0,0.3); 
+}
+
+::-webkit-scrollbar-thumb{
+    background: rgba(255,255,255,0.33); 
+}
+
+html, body, #App{
+    height: 100%;
+    width: 100%;
+    overflow-y: hidden;
+}
+
+body{
+    position: relative;
+    background: #333
+}
+
+.mask{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background:linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.85))
+
+}
+
+#AppBody{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    z-index: 0;
+}
+
+#App{
+    padding: 0 10%;
+    padding-bottom: 6.25%;
+    z-index: 1;
+}
+
+#Grid{
+    display: inline-block;
+    margin: auto;
+    text-align: left;
+    padding-top:5px;
+    padding-bottom: 5px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.grid{
+    width: calc(25% - 16px);
+    margin: 7px;
+    display: inline-block;
+    position: relative;
+}
+
+.grid-play{
+    width: 0;
+    height: 0;
+}
+
+.grid:hover .grid-play{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(0,0,0,0.66);
+    background-image: url('img/play.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 33.3%;
+    border-radius: 10px;
+    cursor:pointer
+}
+
+#Grid img{
+    width: 100%;
+    border-radius: 10px
+}
+
+#Grid img:hover{
+    filter:brightness(0.5);
+    cursor: pointer;
+}
+
+#Grid .Banner{
+    float: left; 
+    width: 50%; 
+    margin-bottom: 2em; 
+    border-radius: 10px; 
+    padding: 0.66em; 
+    background: rgba(244, 184, 149); 
+    position:relative
+}
+
+#Grid .Banner:hover{
+    cursor:pointer;
+}
+
+#Grid .BannerCover{
+    position: absolute; 
+    top: 0; 
+    left:0; 
+    width: 100%; 
+    height: 100%; 
+    background: linear-gradient(90deg, rgba(0,0,0,0), rgba(0,0,0,0.66)); 
+    border-radius: 10px
+}
+
+#Grid .Banner img{
+    float: left; 
+    position: relative; 
+    z-index: 1; 
+    width: 20%
+}
+
+#Grid .Banner img:hover{
+    filter: brightness(1)
+}
+
+#Grid .BannerDiv{
+    float: left; 
+    width: 80%; 
+    padding-left: 0.66em; 
+    position: relative; 
+    z-index: 1;
+}
+
+#Grid .BannerDivTop{
+    float: left; 
+    width: 100%; 
+    text-align: left; 
+    margin-top: 0.25em; 
+    font-size: 1.25em; 
+    color: #FFF
+}
+
+#Grid .BannerDivTitle{
+    float: left; 
+    width: 100%; 
+    text-align: left; 
+    margin-top: 0.33em; 
+    font-size: 2.25em; 
+    font-weight: 900; 
+    color: #FFF
+}
+
+#Player{
+    width: 100%;
+    height: 100%;
+}
+
+.player-voltar{
+    width: 100%;
+    height: 12.5%;
+    color: #FFF;
+    display:flex;
+    align-items: center;
+    text-align: left;
+    font-size: 0.9vw;
+}
+
+#Player .player-voltar-artist{
+    color: #FFF;
+    font-size: 0.9vw;
+}
+
+
+#Player .player-voltar-artist:hover{
+    cursor:pointer
+}
+
+#Player .player-voltar-album{
+    font-size: 0.9vw;
+    padding-left: 4px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+#Player .player-album{
+    float: left;
+    width: 25%;
+    margin-bottom: 1vw
+}
+
+#Player .player-title{
+    float: left;
+    width: 75%;
+    padding-left: 2.5vw
+}
+
+#Player .player-title-title{
+    float: left;
+    width: 100%;
+    font-size: 5vw;
+    font-weight: 700;
+    color: #FFF
+}
+
+#Player .player-title-year{
+    float: left;
+    width: 100%;
+    font-weight: 100;
+    font-size: 2.25vw;
+    color: #FFF;
+}
+
+#Player .player-img{
+    width: 100%;
+    padding-bottom: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+#Player .player-album img{
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.15);
+}
+
+#Player .player-tracklist{
+    margin: auto;
+    width: 85%;
+    height: 47.5%;
+    overflow-y: auto;
+}
+
+#Player .player-tracklist-record{
+    font-weight: 500;
+    opacity: 0.6;
+    text-transform: uppercase;
+    text-align: right;
+    float: right;
+    margin-top: 20px;
+}
+
+#Player .player-tracklist-table{
+    width: 100%;
+    color: rgba(255,255,255,0.75)
+}
+
+#Player .player-tracklist-table-line{
+    float: left;
+    width: 100%;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    cursor:pointer
+}
+
+#Player .player-tracklist-table-line:hover{
+    background-color:rgba(255,255,255,0.05) !important
+}
+
+#Player .player-tracklist-table-line-top:hover{
+    cursor: auto;
+    background-color: transparent !important;
+}
+
+#Player .player-tracklist-table-number{
+    float: left;
+    width: 36px;
+    padding-left: 8px
+}
+
+#Player .player-tracklist-table-title{
+    float: left;
+    width: calc(100% - 80px);
+    font-weight: 300;
+}
+
+#Player .player-tracklist-table-duration{
+    float: left;
+    width: 44px;
+    text-align: center;
+}
+
+#Player h1{
+    float: left;
+    width: 100%;
+    font-size: 2vw;
+    font-weight: 700;
+    padding: 28px 0;
+    padding-top: 20px;
+    color: #FFF;
+}
+
+.player-album-audio{
+    float: left;
+    text-align:center;
+}
+
+.player-album-audio div{
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    margin: 14px;
+    background-size: cover;
+}
+
+.player-album-audio div:hover{
+    opacity: 1 !important;
+    cursor: pointer;
+}
+
+.player-album-previous{    
+    background-image: url('img/previous.png');
+    opacity: 0.25;
+    pointer-events: none;
+}
+
+.player-album-next{  
+    background-image: url('img/next.png');
+    opacity: 0.75;
+}
+
+.player-album-play{
+    background-image: url('img/play.png');
+    transform: scale(2);
+    opacity: 0.95;
+}
+
+.player-album-pause{
+    background-image: url('img/pause.png');
+    transform: scale(2);
+    opacity: 0.95;
+}
+
+.player-lyrics{
+    float: left;
+    font-size: 1.4vw;
+    color: #FFF;
+    margin-top: 20px;
+    opacity: 0.6
+}
+
+.player-lyrics:hover{
+    cursor:pointer;
+    opacity: 1
+}
+
+.player-div{
+    position: relative;
+    z-index: 0;
+    background-color: #000;
+    width: 100%;
+}
+
+.player-album-lyrics{
+    float: left;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5vw;
+    color: #FFF
+}
+
+.player-div-mask, .player-div-body{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.player-div-mask{
+    position: absolute;
+    opacity: 0.8;
+}
+
+.player-div-body{
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.player-div-img-title{
+    display: flex;
+    align-items: center;
+    width: 20%;
+}
+
+.player-div-img{
+    float: left;
+    margin: 10px;
+    width: 80px;
+    height: 80px;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 5px
+}
+
+.player-div-title{
+    float: left;
+    width: calc(100% - 100px);
+}
+
+.player-title{
+    float: left;
+    width: calc(25% - 100px);
+    color: #FFF
+}
+
+
+.player-title-name{
+    float: left;
+    width: 100%;
+    font-size: 1.3vw;
+    font-weight: 700;
+    color: #FFF;
+    white-space: nowrap;                  
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.player-title-artist{
+    float: left;
+    width: 100%;
+    color: #FFF;
+}
+
+.player-top-mobile{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 10vh;
+    display: none;
+    align-items: center;
+    padding: 3vw;
+}
+
+.player-top-mobile-artist{
+    font-size: 3.5vw;
+    color: #FFF
+}
+
+.player-top-mobile-album{
+    margin-left: 5px;
+    font-size: 3.5vw;
+    color: rgba(255, 255, 255, 0.6)
+}
+
+.player-album-lyrics-div{
+    float: left;
+    width: 128px;
+    height: 100%;
+    cursor: pointer;
+    background-image: url(img/lyrics.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 44px;
+}
+
+#Lyrics{
+    position:absolute;
+    top: 0;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 6vw
+}
+
+#Lyrics img{
+    width: 20%;
+}
+
+#Lyrics .lyrics-lyrics{
+    float: left;
+    width: 100%;
+    padding-top: 5%
+}
+
+#Lyrics .lyrics-lyrics-top{
+    float: left;
+    width: 100%;
+    font-size: 3vw;
+    font-weight: 700;
+    color: #FFF;
+}
+
+#Lyrics .lyrics-lyrics-sec{
+    float: left;
+    width: 100%;
+    padding-top: 2vw;
+    font-size: 1.5vw;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#Lyrics h2{
+    font-size: 2.5vw;
+    color: #FFF
+}
+
+#Lyrics .lyrics-close{
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    width: 72px;
+    height: 72px;
+    border-radius: 100%;
+    transform: rotate(45deg) scale(0.7);
+    background: rgba(255, 255, 255, 0.5);
+}
+
+#Lyrics .lyrics-close:hover{
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+#Lyrics .lyrics-close-bar-one{
+    position: relative;
+    top: 34px;
+    left: 11px;
+    transform: rotate(90deg) scale(0.9);
+    width: 50px;
+    height: 5px;
+}
+
+
+#Lyrics .lyrics-close-bar-two{
+    position: relative;
+    top: 29.5px;
+    left: 11px;
+    transform: rotate(180deg) scale(0.9);
+    width: 50px;
+    height: 5px;
+}
+
+#Lyrics .lyrics-album{
+    position: relative;
+    margin: auto; 
+    width: 20%; 
+    padding-bottom:20%; 
+    background-position: center center; 
+    background-size: cover; 
+}
+
+#Lyrics .lyrics-album-border{
+    border: 0.5vw solid rgb(115, 217, 63);
+    border-radius: 100%;
+}
+
+#Lyrics .lyrics-album-border-opened{
+    border: 0.5vw solid rgba(0, 0, 0, 0.25);
+    border-radius: 100%;
+}
+
+#Lyrics .lyrics-album:hover{
+    cursor: pointer
+}
+
+#Lyrics .lyrics-album-img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-position: center center; 
+    background-size: cover; 
+    transform: scale(0.95);
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
+}
+
+#Lyrics .lyrics-album-img-radius{
+    box-shadow: none;
+    border-radius: 100%
+}
+
+#Player .lyrics-detail{
+    float: left;
+    font-weight: 700;
+    margin-left: 0.5vw;
+    font-size: 0.7vw;
+    padding: 0.15vw 0.4vw;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+#Player .player-name{
+    float: left;
+}
+
+#Stories{
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 6vw
+}
+
+#Stories ul, li,.track-board, .track-before, .track-next, .track-linha-div-play{
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+#Stories .track{
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1
+}
+
+#Stories .track-linha{
+    float: left;
+    width: 100%;;
+}
+
+#Stories .track-linha-div{
+    float: left;
+    width: calc(25% - 10px);
+    height: 1vh;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 10px 5px;
+    border-radius: 1vh;
+    position: relative;
+    overflow: hidden;
+}
+
+#Stories .track-linha-div-play{
+    width: 0%;
+    /*transition: width 15s;*/
+    background-color: rgba(255, 255, 255, 1);
+}
+
+#Stories .track-linha-div-play:hover{
+    width: 100%;
+}
+
+#Stories .track-board{
+    z-index: 2;
+}
+
+#Stories .track-before{
+    width: 50%;
+    z-index: 3;
+}
+
+#Stories .track-next{
+    left: 50%;
+    width: 50%;
+    z-index: 3;
+}
+
+#Stories li{
+    background-size: cover;
+    background-position: center center;
+}
+
+#Stories .stories-layer{
+    position:absolute;
+    top: 0;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.5));
+    padding: 5% 10%;
+    display: flex;
+    align-items: flex-end;
+
+}
+
+#Stories .stories-layer span{
+    font-family: Secular One;
+    font-size: 7vh;
+    font-weight: 900;
+    color: #FFF;
+    text-align: left;
+}
+
+#Artists{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#Artists .Artista{
+    text-align:center;
+    margin: 0 2vw;
+    transition: 0.5s
+}
+
+#Artists .Artista:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 0.5s
+}
+
+#Artists .ArtistaImg{
+    width: 15vw;
+    padding-bottom: 15vw;
+    border-radius: 100%;
+    background-size: cover
+}
+
+#Artists .ArtistaNome{
+    float: left;
+    width: 100%;
+    margin-top: 2vh;
+    font-size: 2vw;
+    font-weight: 700;
+    text-align: center;
+    color: #FFF
+}
+
+@media (max-width: 1280px){
+    #App {
+        padding: 0 2%;
+        padding-bottom: 6.25%;
+    }
+}
+
+@media (max-width: 980px){
+    #App{
+        padding-bottom: 12.5%
+    }
+
+    .grid{
+        width: calc(33.3% - 15px);
+    }
+
+    #Player .player-tracklist{
+        width: 100%;
+        height: 60%;
+        padding-left: 0
+    }
+
+    #Player .player-album{
+        width: 33%;
+    }
+
+    #Player .player-title{
+        width: 67%
+    }
+    
+    #Player .player-title-title{
+        font-size: 7vw
+    }
+
+    #Player .player-title-year{
+        font-size: 4vw
+    }
+
+    #Player h1{
+        float: left;
+        width: 65%;
+        padding-left: 20px;
+
+        font-size: 4vw
+    }
+    #App .player-album-audio{
+        width: 65%;
+    }
+
+    #App .player-album-audio{
+        text-align: left;
+    }
+}
+
+@media (max-width: 500px){
+    ::-webkit-scrollbar{
+        width: 6px;
+    }
+
+    #App{
+        padding: 0 2.5%;
+        padding-bottom: 15%
+    }
+
+    .grid{
+        width: calc(50% - 15px);
+    }
+
+    .player-voltar{
+        display:inline-block;
+        padding: 20px 0;
+        font-size: 3.5vw;
+        height: auto;
+    }
+
+    #Grid .Banner{
+        width: calc(100% - 8px);
+        padding: 2.5em;
+        margin-bottom: 5em
+    }
+
+    #Grid .Banner img{
+        width: 30%
+    }
+
+    #Grid .BannerDiv{
+        width: 70%;
+        padding-left: 2.5em
+    }
+
+    #Grid .BannerDivTop{
+        margin-top: 0.5em;
+        font-size: 3.66em
+    }
+
+    #Grid .BannerDivTitle{
+        margin-top: 0.25em;
+        font-size: 7em
+    }
+
+    #Player .player-tracklist{
+        height: 67%
+    }
+
+    #Player .player-voltar-artist{
+        font-size: 3.5vw
+    }
+
+    #Player .player-voltar-album{
+        font-size: 4vw
+    }
+
+    #Player .player-title-title{
+        padding-top: 2vw
+    }
+
+    #Player .player-tracklist-table-number{
+        font-size: 4vw
+    }
+
+    #Player .player-tracklist-table-title{
+        font-size: 4vw;
+    }
+
+    #Player .player-tracklist-table-duration{
+        font-size: 4vw;
+    }
+
+    #Player h1{
+        width: 100%;
+        font-size: 6vw;
+        padding-top: 0px;
+        padding-bottom: 16px;
+        padding-left: 18px
+    }
+
+    #App .player-div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    
+    #Player .player-tracklist-record{
+        font-size: 3vw;
+        padding-bottom: 10px;
+    }
+
+    #Player .player-album{
+        width: 40%;
+    }
+    
+    #Player .player-title{
+        padding-top: 4vw;
+        width: 60%;
+        text-align: left
+    }
+
+    #Lyrics{
+        padding-top: 18vw;
+    }
+
+    #Lyrics img{
+        width: 50%;
+    }
+
+    #Lyrics .lyrics-lyrics{
+        padding-top: 9vw;
+    }
+
+    #Lyrics .lyrics-lyrics-top{
+        font-size: 8vw;
+    }
+
+    #Lyrics .lyrics-lyrics-sec{
+        padding-top: 4vw;
+        font-size: 5vw;
+    }
+
+    #Lyrics .lyrics-close{
+        top: 0px;
+        right: 0px;
+        transform: rotate(45deg) scale(0.5);
+    }
+
+    #Lyrics .lyrics-album{
+        width: 50%;
+        padding-bottom: 50%;
+    }
+
+    #Lyrics .lyrics-album-border{
+        border-width: 1vw;
+    }
+
+    #Lyrics .lyrics-album-border-opened{
+        border-width: 1vw;
+    }
+
+    #Player .player-lyrics{
+        width: 100%;
+        padding-left: 16px;
+        margin-top: 8px;
+        margin-bottom: 18px;
+        font-size: 4vw;
+    }
+
+    #Player .player-name{
+        font-size: 4vw
+    }
+
+    #Player .lyrics-detail {
+        margin-top: 0.75vw;
+        margin-left: 1.5vw;
+        font-size: 2.75vw;
+        padding: 0.15vw 0.5vw;
+    }
+    
+    #Stories .stories-layer span{
+        font-size: 4vh;
+    }
+
+    #Stories .stories-layer{
+        padding: 5%
+    }
+
+    #Stories .track-linha-div{
+        width: calc(25% - 8px);
+        height: 0.8vh;
+        margin: 8px 4px;
+    }
+
+    .player-div{
+        position: absolute;
+        height: 100%;
+        z-index: 1;
+    }
+
+    .player-div-body{
+        display: block;
+    }
+
+    .player-album-lyrics{
+        height: auto;
+    }
+
+    .player-div-img{
+        width: 70%;
+        padding-bottom: 70%;
+        margin-top: 10vw
+    }
+
+    .player-title{
+        width: 100%;
+        text-align: center;
+    }
+
+    .player-title-name{
+        font-size: 7vw;
+        padding: 3vw 0;
+    }
+
+    .player-title-artist{
+        font-size: 4vw
+    }
+
+    .player-album-audio{
+        width: 100%;
+        padding-top: 7vw
+    }
+
+    .player-album-audio div{
+        width: 28px;
+        height: 28px
+    }
+
+    .player-album-lyrics{
+        font-size: 4vw;
+        padding-top: 4vw
+    }
+
+    .player-album-lyrics:hover{
+        background: none
+    }
+
+    .player-top-mobile{
+        display: flex
+    }
+
+    .player-div{
+        position: relative;
+        height: auto;
+        z-index: 0
+    }
+
+    .player-div-body{
+        flex-direction: inherit;
+        justify-content: inherit;
+    }
+
+    .player-top-mobile{
+        display: none
+    }
+
+    .player-div-img-title{
+        display: block;
+        width: 210px;
+    }
+
+    .player-div-title{
+        width: calc(100% - 100px);
+        padding-top: 8px;
+        height: 80px;
+        text-align: left
+    }
+
+    .player-div-img{
+        width: 60px;
+        height: 60px;
+        padding-bottom: inherit;
+        margin-top: 10px
+    }
+
+    .player-album-audio{
+        width: calc(100% - 230px);
+        height: 80px;
+        padding-top: 26px
+    }
+
+    .player-title-name{
+        font-size: 4vw;
+        padding: inherit;
+        white-space: nowrap;                  
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .player-title-artist{
+        font-size: 3vw;
+        padding-top: 0px
+    }
+
+    .player-album-audio div{
+        width: 16px;
+        height: 16px;
+        margin: 7px;
+    }
+
+    .player-album-lyrics{
+        height: 100%;
+        padding: inherit;
+    }
+
+    .player-album-lyrics-div{
+        width: 40px;
+        background-size: 22px
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

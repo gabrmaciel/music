@@ -1,0 +1,20 @@
+﻿<div id="Stories">
+    <div class="track">
+        <div class="track-linha" id="track-linha">
+        </div>
+        
+
+        <div class="track-board">
+            <div class="track-before" onclick="Stories('before')">&nbsp;</div>
+            <div class="track-next" onclick="Stories('after')">&nbsp;</div>
+        </div>
+    </div>
+    <ul id="stories-box">
+    </ul>
+</div>
+<script>
+    $(document).ready(function(){
+        StoriesOpened(trackID);
+        StoriesConstructor(trackID);
+    })
+</script>
